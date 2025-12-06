@@ -86,15 +86,16 @@ int main()
 
     //printf("%d", len);
 
-    for(int i = 0; i <= len; i++) {
+    for(int i = 0; i <= len-1; i++) {
         myNumbers[i] = rand();
     }
 
 
     printf("Tablica: \n");
     for(int i = 0; i <= len-1; i++) {
-        printf("%d ", myNumbers[i]);
+        printf("%d, ", myNumbers[i]);
     }
+
     printf("\n");
 
     min_arr(myNumbers, len);
@@ -113,10 +114,11 @@ int main()
 
     timer = clock();
     BubbleSortPointers(&myNumbers, len);
-    //timer = clock() - timer;
+    timer = clock() - timer;
 
     printf("\n");
     printf("\n");
-    printf("Czas dla bubble sort: %f", ((float)timer / CLOCKS_PER_SEC));
+    printf("Czas dla bubble sort: %f s\n", (double)timer / CLOCKS_PER_SEC);
+
     return 0;
 }
