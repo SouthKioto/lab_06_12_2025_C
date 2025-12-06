@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void min_arr(int *tablica, int len) {
     int min = tablica[1];
@@ -64,6 +65,10 @@ void BubbleSortPointers(int *tab, int len) {
         printf("%d ", *(tab + i));
 }
 
+void MergeSortPointers(int *tab, int len) {
+
+}
+
 int main()
 {
     // podanie dlugosci tabloicy jedno wym. przez uzytkownika
@@ -102,8 +107,16 @@ int main()
 
 
     printf("\n---------Sortowania----------\n");
+    //implementacja timer
+    float time;
+    clock_t timer;
 
+    timer = clock();
     BubbleSortPointers(&myNumbers, len);
+    //timer = clock() - timer;
 
+    printf("\n");
+    printf("\n");
+    printf("Czas dla bubble sort: %f", ((float)timer / CLOCKS_PER_SEC));
     return 0;
 }
